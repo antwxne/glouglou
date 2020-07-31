@@ -15,6 +15,7 @@ SRC		=	my_strcpy.c			\
 			my_strlowcase.c	\
 			my_strcapitalize.c	\
 			my_str_isalpha.c	\
+			my_str_isnum.c		\
 
 TEST_NAME 	=	unit_tests
 

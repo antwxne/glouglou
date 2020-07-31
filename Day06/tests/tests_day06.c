@@ -134,29 +134,54 @@ Test (my_strcapitalise, test)
 
 Test (my_str_is_alpha, test_ok)
 {
-    char *str = strdup("binks");
+    char *str = "binks";
     int got = my_str_is_alpha(str);
     int expected = 1;
 
     cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
-    free(str);
 }
 
 Test (my_str_is_alpha, test_ok_empty)
 {
-    char *str = strdup("");
+    char *str = "";
     int got = my_str_is_alpha(str);
     int expected = 1;
 
     cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
-    free(str);
 }
+
 Test (my_str_is_alpha, test_nok)
 {
-    char *str = strdup(" binks to , binks");
+    char *str = " binks to , binks";
     int got = my_str_is_alpha(str);
     int expected = 0;
 
     cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
-    free(str);
+}
+
+Test (my_str_isnum, test_ok)
+{
+    char *str = "101214";
+    int got = my_str_isnum(str);
+    int expected = 1;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
+
+Test (my_str_isnum, test_ok_empty)
+{
+    char *str = "";
+    int got = my_str_isnum(str);
+    int expected = 1;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
+
+Test (my_str_isnum, test_nok)
+{
+    char *str = "10 12 14";
+    int got = my_str_isnum(str);
+    int expected = 0;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
 }
