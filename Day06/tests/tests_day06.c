@@ -111,3 +111,13 @@ Test (my_strupcase, test)
     cr_assert_str_eq(got, expected, "Got: %s | Expected: %s\n", got, expected);
     free(str);
 }
+
+Test (my_strlowcase, test)
+{
+    char *str = strdup("Ola, cOmo estA!");
+    char *got = my_strlowcase(str);
+    char *expected = "ola, como esta!";
+
+    cr_assert_str_eq(got, expected, "Got: %s | Expected: %s\n", got, expected);
+    free(str);
+}

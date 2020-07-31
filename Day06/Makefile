@@ -5,14 +5,14 @@
 ## Makefile
 ##
 
-SRC		=	my_putchar.c		\
-			my_strcpy.c			\
+SRC		=	my_strcpy.c			\
 			my_strncpy.c		\
 			my_revstr.c			\
 			my_strstr.c		\
 			my_strcmp.c 	\
 			my_strncmp.c	\
 			my_strupcase.c	\
+			my_strlowcase.c	\
 
 TEST_NAME 	=	unit_tests
 
