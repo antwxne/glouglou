@@ -11,5 +11,6 @@
 int my_putchar(char c);
 char *my_strcpy(char *dest, char const *src);
 char *my_strncpy(char *dest, char const *src, int n);
+char *my_revstr(char *str);
 
 #endif /* !TEST_H_ */

@@ -12,8 +12,8 @@
 
 Test (strcpy, test)
 {
-    char dest[255];
-    char dest2[255];
+    char dest[255] = {0};
+    char dest2[255] = {0};
     char *got = my_strcpy(dest, "plouf");
     char *expected = strcpy(dest2, "plouf");
 
@@ -22,10 +22,18 @@ Test (strcpy, test)
 
 Test (strncpy, test)
 {
-    char dest[255];
-    char dest2[255];
+    char dest[255] = {0};
+    char dest2[255] = {0};
     char *got = my_strncpy(dest, "plouf", 3);
     char *expected = strncpy(dest2, "plouf", 3);
+
+    cr_assert_str_eq(got, expected, "Got: %s | Expected: %s\n", got, expected);
+}
+
+Test (my_revstr, test)
+{
+    char *got = my_revstr(strdup("azert"));
+    char *expected = "treza";
 
     cr_assert_str_eq(got, expected, "Got: %s | Expected: %s\n", got, expected);
 }
