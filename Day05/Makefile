@@ -10,6 +10,7 @@ SRC		=	my_putchar.c		\
 			my_compute_factorial_rec.c	\
 			my_compute_power_it.c		\
 			my_compute_power_rec.c		\
+			my_compute_square_root.c	\
 
 
 TEST_NAME 	=	unit_tests

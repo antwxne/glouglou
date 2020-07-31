@@ -122,3 +122,19 @@ Test (task04, test_negativ)
 
     cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
 }
+
+Test (task05, test)
+{
+    int got = my_compute_square_root(25);
+    int expected = sqrt(25);
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
+
+Test (task05, test_negativ)
+{
+    int got = my_compute_square_root(-8);
+    int expected = 0;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
