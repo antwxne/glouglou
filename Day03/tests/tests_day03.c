@@ -29,3 +29,24 @@ Test (task03, test)
     cr_assert_eq(my_print_digit(), 0);
     cr_assert_stdout_eq_str("0123456789");
 }
+
+Test (task04, positiv)
+{
+    cr_redirect_stdout();
+    cr_assert_eq(my_isneg(3), 0);
+    cr_assert_stdout_eq_str("P");
+}
+
+Test (task04, negativ)
+{
+    cr_redirect_stdout();
+    cr_assert_eq(my_isneg(-3), 0);
+    cr_assert_stdout_eq_str("N");
+}
+
+Test (task04, null)
+{
+    cr_redirect_stdout();
+    cr_assert_eq(my_isneg(0), 0);
+    cr_assert_stdout_eq_str("P");
+}

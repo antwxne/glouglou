@@ -12,5 +12,6 @@ int my_putchar(char c);
 int my_print_alpha(void);
 int my_print_revalpha(void);
 int my_print_digit(void);
+int my_isneg(int n);
 
 #endif /* !TEST_H_ */
