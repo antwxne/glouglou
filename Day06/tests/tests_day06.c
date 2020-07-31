@@ -131,3 +131,32 @@ Test (my_strcapitalise, test)
     cr_assert_str_eq(got, expected, "Got: %s | Expected: %s\n", got, expected);
     free(str);
 }
+
+Test (my_str_is_alpha, test_ok)
+{
+    char *str = strdup("binks");
+    int got = my_str_is_alpha(str);
+    int expected = 1;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+    free(str);
+}
+
+Test (my_str_is_alpha, test_ok_empty)
+{
+    char *str = strdup("");
+    int got = my_str_is_alpha(str);
+    int expected = 1;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+    free(str);
+}
+Test (my_str_is_alpha, test_nok)
+{
+    char *str = strdup(" binks to , binks");
+    int got = my_str_is_alpha(str);
+    int expected = 0;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+    free(str);
+}
