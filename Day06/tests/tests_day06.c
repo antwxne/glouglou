@@ -90,6 +90,7 @@ Test (my_strncmp, test_ok)
 
     cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
 }
+
 Test (my_strncmp, test_nok)
 {
     char *s1 = "plouf";
@@ -99,4 +100,14 @@ Test (my_strncmp, test_nok)
     int expected = strncmp(s1, s2, n);
 
     cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
+
+Test (my_strupcase, test)
+{
+    char *str = strdup("Ola, cOmo estA!");
+    char *got = my_strupcase(str);
+    char *expected = "OLA, COMO ESTA!";
+
+    cr_assert_str_eq(got, expected, "Got: %s | Expected: %s\n", got, expected);
+    free(str);
 }

@@ -12,8 +12,10 @@ SRC		=	my_putchar.c		\
 			my_strstr.c		\
 			my_strcmp.c 	\
 			my_strncmp.c	\
+			my_strupcase.c	\
 
 TEST_NAME 	=	unit_tests
 
 test_run:
+	mr_clean
 	gcc -o $(TEST_NAME) $(SRC) tests/*.c -lcriterion --coverage
