@@ -18,6 +18,7 @@ SRC		=	my_strcpy.c			\
 			my_str_isnum.c		\
 			my_str_islower.c	\
 			my_str_isupper.c	\
+			my_str_isprintable.c 	\
 
 TEST_NAME 	=	unit_tests
 

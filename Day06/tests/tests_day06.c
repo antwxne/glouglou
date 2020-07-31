@@ -239,3 +239,30 @@ Test (my_str_isupper, test_nok)
 
     cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
 }
+
+Test (my_str_isprintable, test_ok)
+{
+    char *str = "COUCOU a ;:!!! a&_'&)&) ";
+    int got = my_str_isprintable(str);
+    int expected = 1;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
+
+Test (my_str_isprintable, test_ok_empty)
+{
+    char *str = "";
+    int got = my_str_isprintable(str);
+    int expected = 1;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
+
+Test (my_str_isprintable, test_nok)
+{
+    char *str = "coUcou\b\a";
+    int got = my_str_isprintable(str);
+    int expected = 0;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
