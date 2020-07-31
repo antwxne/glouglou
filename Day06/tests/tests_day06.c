@@ -36,4 +36,15 @@ Test (my_revstr, test)
     char *expected = "treza";
 
     cr_assert_str_eq(got, expected, "Got: %s | Expected: %s\n", got, expected);
+    free(got);
+}
+
+Test (my_strstr, test_ok)
+{
+    char *str = strdup("ah oui ca va pas oulala");
+    char *got = my_strstr(str, "ca");
+    char *expected = strstr(str, "ca");
+
+    cr_assert_str_eq(got, expected, "Got: %s | Expected: %s\n", got, expected);
+    free(str);
 }
