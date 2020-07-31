@@ -154,3 +154,19 @@ Test (task06, test_false)
 
     cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
 }
+
+Test (task07, equal)
+{
+    int got = my_find_prime_sup(7);
+    int expected = 7;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
+
+Test (task07, big)
+{
+    int got = my_find_prime_sup(24);
+    int expected = 29;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
