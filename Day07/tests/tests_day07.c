@@ -19,3 +19,13 @@ Test (my_strcat, test)
 
     cr_assert_str_eq(got, expected, "Got: %s | Expected: %s\n", got, expected);
 }
+
+Test (my_strncat, test)
+{
+    char dest[255] = {0};
+    char *str = strcpy(dest, "plif");
+    char *got = my_strncat(str, "plouf", 3);
+    char *expected = strncat(str, "plouf", 3);
+
+    cr_assert_str_eq(got, expected, "Got: %s | Expected: %s\n", got, expected);
+}

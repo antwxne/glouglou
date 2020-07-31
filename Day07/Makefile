@@ -6,7 +6,7 @@
 ##
 
 SRC		=	my_strcat.c	\
-			
+			my_strncat.c	\
 
 TEST_NAME 	=	unit_tests
 
