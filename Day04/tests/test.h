@@ -14,5 +14,6 @@ int my_putstr(char const *str);
 int my_strlen(char const *str);
 char *my_evil_str(char *str);
 int my_getnbr(char const *str);
+void my_sort_int_array(int *array, int size);
 
 #endif /* !TEST_H_ */

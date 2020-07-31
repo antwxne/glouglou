@@ -67,3 +67,13 @@ Test (task05, null)
 
     cr_assert_eq(got, expected, "Got: %d | expected: %d\n", got, expected);
 }
+
+Test (task06, test)
+{
+    int size = 6;
+    int array[] = {7, 0, -4, 9, 5678, -65555};
+    int expected[] = {-65555, -4, 0, 7, 9, 5678};
+
+    my_sort_int_array(array, size);
+    cr_assert_arr_eq(array, expected, size);
+}

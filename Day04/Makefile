@@ -11,6 +11,7 @@ SRC		=	my_putchar.c		\
 			my_strlen.c			\
 			my_evil_str.c		\
 			my_getnbr.c			\
+			my_sort_int_array.c	\
 
 TEST_NAME 	=	unit_tests
 
