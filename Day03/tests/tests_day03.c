@@ -50,3 +50,38 @@ Test (task04, null)
     cr_assert_eq(my_isneg(0), 0);
     cr_assert_stdout_eq_str("P");
 }
+
+Test (task07, positiv)
+{
+    cr_redirect_stdout();
+    cr_assert_eq(my_putnbr(7), 0);
+    cr_assert_stdout_eq_str("7");
+}
+
+Test (task07, positiv_big)
+{
+    cr_redirect_stdout();
+    cr_assert_eq(my_putnbr(7689189), 0);
+    cr_assert_stdout_eq_str("7689189");
+}
+
+Test (task07, negativ)
+{
+    cr_redirect_stdout();
+    cr_assert_eq(my_putnbr(-7), 0);
+    cr_assert_stdout_eq_str("-7");
+}
+
+Test (task07, negativ_big)
+{
+    cr_redirect_stdout();
+    cr_assert_eq(my_putnbr(-7689189), 0);
+    cr_assert_stdout_eq_str("-7689189");
+}
+
+Test (task07, null)
+{
+    cr_redirect_stdout();
+    cr_assert_eq(my_putnbr(0), 0);
+    cr_assert_stdout_eq_str("0");
+}

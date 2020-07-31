@@ -10,6 +10,7 @@ SRC		=	my_putchar.c		\
 			my_print_revalpha.c	\
 			my_print_digits.c 	\
 			my_isneg.c			\
+			my_put_nbr.c 		\
 
 TEST_NAME 	=	unit_tests
 
