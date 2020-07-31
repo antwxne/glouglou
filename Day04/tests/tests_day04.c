@@ -7,6 +7,7 @@
 
 #include <criterion/criterion.h>
 #include <criterion/redirect.h>
+#include <string.h>
 #include "test.h"
 
 Test (task01, test)
@@ -32,4 +33,13 @@ Test (task03, test)
     int expected = strlen("efgqegq");
 
     cr_assert(got == expected, "Got: %d and expected: %d\n", got, expected);
+}
+
+Test (task04, test)
+{
+    char *got = my_evil_str(strdup("azerty"));
+    char *expected = "ytreza";
+
+    cr_assert_str_eq(got, expected, "Got: %s | Expected: %s\n", got, expected);
+    free(got);
 }
