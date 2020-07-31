@@ -29,3 +29,13 @@ Test (concat_params, test)
     cr_assert_str_eq(got, expected, "Got: %s | Expected: %s\n", got, expected);
     free(got);
 }
+
+Test (my_show_word_array, test)
+{
+    char *array[] = {"patate", "plouf", "caca", "chasse", 0};
+    char *expected = "patate\nplouf\ncaca\nchasse\n";
+    
+    cr_redirect_stdout();
+    my_show_word_array(array);
+    cr_assert_stdout_eq_str(expected);
+}

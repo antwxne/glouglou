@@ -7,6 +7,7 @@
 
 SRC		=	my_strdup.c		\
 			concat_params.c		\
+			my_show_word_array.c	\
 
 TEST_NAME 	=	unit_tests
 

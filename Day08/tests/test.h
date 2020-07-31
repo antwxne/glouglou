@@ -10,5 +10,6 @@
 
 char *my_strdup(char const *str);
 char *concat_params(int argc, char **argv);
+int my_show_word_array(char * const *tab);
 
 #endif /* !TEST_H_ */
