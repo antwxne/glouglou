@@ -17,5 +17,6 @@ int my_strcmp(char const *s1, char const *s2);
 int my_strncmp(char const *s1, char const *s2, int n);
 char *my_strupcase(char *str);
 char *my_strlowcase(char *str);
+char *my_strcapitalise(char *str);
 
 #endif /* !TEST_H_ */

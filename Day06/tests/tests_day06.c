@@ -121,3 +121,13 @@ Test (my_strlowcase, test)
     cr_assert_str_eq(got, expected, "Got: %s | Expected: %s\n", got, expected);
     free(str);
 }
+
+Test (my_strcapitalise, test)
+{
+    char *str = strdup(" binks to , binks");
+    char *got = my_strcapitalise(str);
+    char *expected = " Binks To , Binks";
+
+    cr_assert_str_eq(got, expected, "Got: %s | Expected: %s\n", got, expected);
+    free(str);
+}

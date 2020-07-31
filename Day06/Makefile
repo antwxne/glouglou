@@ -13,6 +13,7 @@ SRC		=	my_strcpy.c			\
 			my_strncmp.c	\
 			my_strupcase.c	\
 			my_strlowcase.c	\
+			my_strcapitalize.c	\
 
 TEST_NAME 	=	unit_tests
 
