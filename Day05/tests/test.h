@@ -11,5 +11,6 @@
 int my_putchar(char c);
 int my_compute_factiorial_it(int nb);
 int my_compute_factiorial_rec(int nb);
+int my_compute_power_it(int nb, int p);
 
 #endif /* !TEST_H_ */

@@ -74,3 +74,27 @@ Test (task02, test_negativ)
 
     cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
 }
+
+Test (task03, test)
+{
+    int got = my_compute_power_it(6, 8);
+    int expected = pow(6, 8);
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
+
+Test (task03, test_null)
+{
+    int got = my_compute_power_it(6, 0);
+    int expected = pow(6, 0);
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
+
+Test (task03, test_negativ)
+{
+    int got = my_compute_power_it(6, -8);
+    int expected = pow(6, -8);
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
