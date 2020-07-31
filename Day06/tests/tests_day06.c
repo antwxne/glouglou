@@ -206,8 +206,35 @@ Test (my_str_islower, test_ok_empty)
 
 Test (my_str_islower, test_nok)
 {
-    char *str = "coUcou";
+    char *str = "CoUcou";
     int got = my_str_islower(str);
+    int expected = 0;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
+
+Test (my_str_isupper, test_ok)
+{
+    char *str = "COUCOU";
+    int got = my_str_isupper(str);
+    int expected = 1;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
+
+Test (my_str_isupper, test_ok_empty)
+{
+    char *str = "";
+    int got = my_str_isupper(str);
+    int expected = 1;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
+
+Test (my_str_isupper, test_nok)
+{
+    char *str = "coUcou";
+    int got = my_str_isupper(str);
     int expected = 0;
 
     cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);

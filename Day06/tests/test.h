@@ -21,5 +21,6 @@ char *my_strcapitalise(char *str);
 int my_str_is_alpha(char const *str);
 int my_str_isnum(char const *str);
 int my_str_islower(char const *str);
+int my_str_isupper(char const *str);
 
 #endif /* !TEST_H_ */
