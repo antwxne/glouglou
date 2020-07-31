@@ -185,3 +185,30 @@ Test (my_str_isnum, test_nok)
 
     cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
 }
+
+Test (my_str_islower, test_ok)
+{
+    char *str = "coucou";
+    int got = my_str_islower(str);
+    int expected = 1;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
+
+Test (my_str_islower, test_ok_empty)
+{
+    char *str = "";
+    int got = my_str_islower(str);
+    int expected = 1;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
+
+Test (my_str_islower, test_nok)
+{
+    char *str = "coUcou";
+    int got = my_str_islower(str);
+    int expected = 0;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}

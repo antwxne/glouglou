@@ -1,1 +1,4 @@
-Day03/a.out
+a.out
+*.gcno
+*.gcda
+unit_tests
