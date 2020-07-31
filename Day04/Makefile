@@ -8,6 +8,7 @@
 SRC		=	my_putchar.c		\
 			my_swap.c 			\
 			my_putstr.c			\
+			my_strlen.c			\
 
 TEST_NAME 	=	unit_tests
 

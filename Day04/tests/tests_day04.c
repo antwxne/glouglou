@@ -25,3 +25,11 @@ Test (task02, test)
     cr_assert_eq(my_putstr("plouf"), 0);
     cr_assert_stdout_eq_str("plouf");
 }
+
+Test (task03, test)
+{
+    int got = my_strlen("efgqegq");
+    int expected = strlen("efgqegq");
+
+    cr_assert(got == expected, "Got: %d and expected: %d\n", got, expected);
+}

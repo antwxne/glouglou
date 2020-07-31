@@ -11,5 +11,6 @@
 int my_putchar(char c);
 void my_swap(int *a, int *b);
 int my_putstr(char const *str);
+int my_strlen(char const *str);
 
 #endif /* !TEST_H_ */
