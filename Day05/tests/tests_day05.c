@@ -42,3 +42,35 @@ Test (task01, test_negativ)
 
     cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
 }
+
+Test (task02, test)
+{
+    int got = my_compute_factiorial_rec(5);
+    int expected = 120;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
+
+Test (task02, test_big)
+{
+    int got = my_compute_factiorial_rec(45);
+    int expected = 0;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
+
+Test (task02, test_null)
+{
+    int got = my_compute_factiorial_rec(0);
+    int expected = 1;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
+
+Test (task02, test_negativ)
+{
+    int got = my_compute_factiorial_rec(-5);
+    int expected = 0;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
