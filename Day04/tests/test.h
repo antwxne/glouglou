@@ -13,5 +13,6 @@ void my_swap(int *a, int *b);
 int my_putstr(char const *str);
 int my_strlen(char const *str);
 char *my_evil_str(char *str);
+int my_getnbr(char const *str);
 
 #endif /* !TEST_H_ */

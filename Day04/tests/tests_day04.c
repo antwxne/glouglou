@@ -43,3 +43,27 @@ Test (task04, test)
     cr_assert_str_eq(got, expected, "Got: %s | Expected: %s\n", got, expected);
     free(got);
 }
+
+Test (task05, positiv)
+{
+    int got = my_getnbr("678");
+    int expected = 678;
+
+    cr_assert_eq(got, expected, "Got: %d | expected: %d\n", got, expected);
+}
+
+Test (task05, negativ)
+{
+    int got = my_getnbr("-678");
+    int expected = -678;
+
+    cr_assert_eq(got, expected, "Got: %d | expected: %d\n", got, expected);
+}
+
+Test (task05, null)
+{
+    int got = my_getnbr("0");
+    int expected = 0;
+
+    cr_assert_eq(got, expected, "Got: %d | expected: %d\n", got, expected);
+}

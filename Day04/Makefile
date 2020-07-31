@@ -10,6 +10,7 @@ SRC		=	my_putchar.c		\
 			my_putstr.c			\
 			my_strlen.c			\
 			my_evil_str.c		\
+			my_getnbr.c			\
 
 TEST_NAME 	=	unit_tests
 
