@@ -138,3 +138,19 @@ Test (task05, test_negativ)
 
     cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
 }
+
+Test (task06, test)
+{
+    int got = my_is_prime(7);
+    int expected = 1;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}
+
+Test (task06, test_false)
+{
+    int got = my_is_prime(12);
+    int expected = 0;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+}

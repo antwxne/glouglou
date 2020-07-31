@@ -11,6 +11,7 @@ SRC		=	my_putchar.c		\
 			my_compute_power_it.c		\
 			my_compute_power_rec.c		\
 			my_compute_square_root.c	\
+			my_is_prime.c			\
 
 
 TEST_NAME 	=	unit_tests
