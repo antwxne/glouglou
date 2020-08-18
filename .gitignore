@@ -2,3 +2,5 @@ a.out
 *.gcno
 *.gcda
 unit_tests
+*.xml
+*.iml
