@@ -10,4 +10,6 @@
 
 #include "my_macro_abs.h"
 
+char **my_str_to_word_array(char *str);
+
 #endif /* !TEST_H_ */

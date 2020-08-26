@@ -5,7 +5,7 @@
 ## Makefile
 ##
 
-SRC		=
+SRC		=   my_str_to_word_array.c    \
 
 TEST_NAME 	=	unit_tests
 
