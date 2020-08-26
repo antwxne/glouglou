@@ -13,4 +13,5 @@ TEST_NAME 	=	unit_tests
 
 test_run:
 	mr_clean
-	gcc -o $(TEST_NAME) $(SRC) tests/*.c -lcriterion --coverage -I./include
+	make -C lib/
+	gcc -o $(TEST_NAME) $(SRC) tests/*.c -lcriterion --coverage -I./include -L./lib -lmy_printf
