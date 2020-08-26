@@ -31,7 +31,10 @@ Test (my_str_to_word_array, test1)
     char **got = my_str_to_word_array("plif plaf, plouf");
     char *expected[] = {"plif", "plaf", "plouf", NULL};
 
-    for (int i = 0; expected[i] != NULL; i++)
-        cr_assert_str_eq(got[i], expected[i], "Got: %s | Expected: %s | i = %d\n",
-            got[i], expected[i], i);
+    for (int i = 0; expected[i] != NULL; i++) {
+        cr_assert_str_eq(got[i], expected[i],
+            "Got: %s | Expected: %s | i = %d\n", got[i], expected[i], i);
+        free(got[i]);
+    }
+    free(got);
 }

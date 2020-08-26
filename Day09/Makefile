@@ -6,6 +6,8 @@
 ##
 
 SRC		=   my_str_to_word_array.c    \
+            my_show_word_array.c        \
+            my_params_to_array.c       \
 
 TEST_NAME 	=	unit_tests
 
