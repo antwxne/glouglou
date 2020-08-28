@@ -28,7 +28,6 @@ static char *my_strdup(char *str)
     for (; str[i] != '\0'; i++)
         dest[i] = str[i];
     dest[i] = '\0';
-    printf("str dup === %s\n", dest);
     return dest;
 }
 

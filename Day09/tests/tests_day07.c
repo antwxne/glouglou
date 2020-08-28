@@ -8,7 +8,7 @@
 #include <criterion/criterion.h>
 #include <criterion/redirect.h>
 #include <string.h>
-#include "test.h"
+#include "../include/test.h"
 
 Test(abs, test_pos)
 {
@@ -37,4 +37,12 @@ Test (my_str_to_word_array, test1)
         free(got[i]);
     }
     free(got);
+}
+
+Test(swap_endian, test1)
+{
+    int got = swap_endian_color(0xC0C0C0);
+    int expected = bswap_32(0xC0C0C0);
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
 }
