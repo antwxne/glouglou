@@ -5,15 +5,20 @@
 ## Makefile
 ##
 
-SRC		=   my_str_to_word_array.c    \
-            my_show_word_array.c        \
-            my_params_to_array.c       \
-            swap_endian_color.c         \
-            get_color.c             \
+all:
+	make -C ./lib/
+	make -C ./do_op/
 
-TEST_NAME 	=	unit_tests
+clean:
+	make clean -C ./lib/
+	make clean -C ./do_op/
 
-test_run:
-	mr_clean
+fclean:
+	make fclean -C ./lib/
+	make fclean -C ./do_op/
+
+tests_run:
 	make -C lib/
-	gcc -o $(TEST_NAME) $(SRC) tests/*.c -lcriterion --coverage -I./include -L./lib -lmy_printf
+	make tests_run -C ./do_op/
+
+.PHONY: all clean fclean tests_run

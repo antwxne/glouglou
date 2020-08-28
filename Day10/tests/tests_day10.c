@@ -8,7 +8,7 @@
 #include <criterion/criterion.h>
 #include <criterion/redirect.h>
 #include <string.h>
-#include "../include/test.h"
+#include "test.h"
 
 Test(abs, test_pos)
 {
