@@ -1,48 +1,22 @@
 /*
 ** EPITECH PROJECT, 2020
-** Day03
+** Day10
 ** File description:
-** tests_day03
+** tests_day10
 */
 
-#include <criterion/criterion.h>
-#include <criterion/redirect.h>
-#include <string.h>
 #include "test.h"
 
-Test(abs, test_pos)
+Test(sort_word_array, test1)
 {
-    int got = ABS(6);
-    int expected = 6;
+    char **got = my_str_to_word_array("zebi plif aze caca");
+    char *expected[] = {"aze", "caca", "plif", "zebi", NULL};
 
-    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
-}
-
-Test(abs, test_negatif)
-{
-int got = ABS(-6);
-int expected = 6;
-
-cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
-}
-
-Test (my_str_to_word_array, test1)
-{
-    char **got = my_str_to_word_array("plif plaf, plouf");
-    char *expected[] = {"plif", "plaf", "plouf", NULL};
-
-    for (int i = 0; expected[i] != NULL; i++) {
-        cr_assert_str_eq(got[i], expected[i],
-            "Got: %s | Expected: %s | i = %d\n", got[i], expected[i], i);
+    my_sort_word_array(got);
+    for (unsigned int i = 0; expected[i] != NULL && got[i] != NULL; i++) {
+        cr_assert_str_eq(got[i], expected[i], "Got: %s | Expected: %s | index: %d\n",
+            got[i], expected[i], i);
         free(got[i]);
     }
     free(got);
-}
-
-Test(swap_endian, test1)
-{
-    int got = swap_endian_color(0xC0C0C0);
-    int expected = bswap_32(0xC0C0C0);
-
-    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
 }
