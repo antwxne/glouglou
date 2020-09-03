@@ -6,6 +6,7 @@
 ##
 
 SRC     =	my_prarams_to_list.c	\
+			my_list_size.c 			\
 
 
 OBJ	    =	$(SRC:.c=.o)
@@ -42,6 +43,7 @@ tests_run: SRC += tests/tests_day11.c
 tests_run: SRC := $(filter-out src/main.c, $(SRC))
 tests_run: NAME := unit_tests
 tests_run:
+	make -C ./lib/
 	$(RM) *.gcda *.gcno
 	$(CC) -o $(NAME) $(SRC) $(LDFLAGS) -lcriterion --coverage $(CPPFLAGS) $(LDFLAGS)
 	./$(NAME)

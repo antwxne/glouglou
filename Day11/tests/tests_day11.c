@@ -29,3 +29,18 @@ Test(my_params_to_list, test1)
         cr_assert_str_eq(temp->data, av[i], "Got: %s | Expected: %s | \n", temp->data, av[i]);
     free_list(list);
 }
+
+Test(my_list_size, test1)
+{
+    int ac = 3;
+    char *av[] = {"plif", "plouf", "caca"};
+    linked_list_t *list = my_params_to_list(ac, av);
+    int got = my_list_size(list);
+    int got2 = my_list_size(list);
+    int expected = ac;
+
+    cr_assert_eq(got, expected, "Got: %d | Expected: %d\n", got, expected);
+
+    cr_assert_eq(got2, expected, "Got2: %d | Expected: %d\n", got2, expected);
+    free_list(list);
+}
