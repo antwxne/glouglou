@@ -12,5 +12,6 @@
 
 int my_sort_word_array(char **tab);
 char **my_str_to_word_array(char *str);
+int my_advanced_sort_word_array(char **tab, int (*cmp)(char const *, char const *));
 
 #endif /* !TEST_H_ */
