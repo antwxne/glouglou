@@ -9,6 +9,9 @@ SRC 	= 	my_str_to_word_array.c		\
 			my_sort_word_array.c 		\
 			my_advanced_sort_word_array.c	\
 
+TEST_SRC 	=	tests/tests_day10.c 	\
+				tests/tests_do_op.c 	\
+
 NAME 	=	unit_tests
 
 CPPFLAGS	=	-I./include
@@ -38,7 +41,6 @@ re:
 tests_run:
 	mr_clean
 	make -C lib/
-	make tests_run -C ./do_op/
 	gcc -o $(NAME) $(SRC) tests/tests_day10.c $(CPPFLAGS) $(LDFLAGS)
 	./unit_tests
 
