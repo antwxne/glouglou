@@ -12,5 +12,6 @@
 
 linked_list_t *my_params_to_list(int ac, char * const *av);
 int my_list_size(linked_list_t const *begin);
+void my_rev_list(linked_list_t **begin);
 
 #endif /* !TESTS_H_ */

@@ -7,6 +7,7 @@
 
 SRC     =	my_prarams_to_list.c	\
 			my_list_size.c 			\
+			my_rev_list.c			\
 
 
 OBJ	    =	$(SRC:.c=.o)

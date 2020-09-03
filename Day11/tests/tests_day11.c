@@ -44,3 +44,16 @@ Test(my_list_size, test1)
     cr_assert_eq(got2, expected, "Got2: %d | Expected: %d\n", got2, expected);
     free_list(list);
 }
+
+Test(my_rev_list, test1)
+{
+    char *av[] = {"plif", "plaf", "plouf"};
+    int ac = 3;
+    linked_list_t *list = my_params_to_list(ac, av);
+
+    my_rev_list(&list);
+    ac -= 1;
+    for (linked_list_t *temp = list; ac >= 0 && temp != NULL; ac--, temp = temp->next)
+        cr_assert_str_eq(temp->data, av[ac], "Got:%s | Expected: %s\n", temp->data, av[ac]);
+    free_list(list);
+}
