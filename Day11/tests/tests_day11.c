@@ -6,7 +6,9 @@
 */
 
 #include <string.h>
+#include <unistd.h>
 #include <criterion/criterion.h>
+#include <criterion/redirect.h>
 #include "tests.h"
 
 static void free_list(linked_list_t *list)
@@ -55,5 +57,18 @@ Test(my_rev_list, test1)
     ac -= 1;
     for (linked_list_t *temp = list; ac >= 0 && temp != NULL; ac--, temp = temp->next)
         cr_assert_str_eq(temp->data, av[ac], "Got:%s | Expected: %s\n", temp->data, av[ac]);
+    free_list(list);
+}
+
+Test(my_apply_on_nodes, test1)
+{
+    char *av[] = {"plif", "plaf", "plouf"};
+    int ac = 3;
+    linked_list_t *list = my_params_to_list(ac, av);
+    int c_caca(void *str){write(1, str, strlen(str));}
+
+    cr_redirect_stdout();
+    my_apply_on_nodes(list, &c_caca);
+    cr_assert_stdout_eq_str("ploufplafplif");
     free_list(list);
 }
