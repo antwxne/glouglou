@@ -173,3 +173,26 @@ Test(my_add_in_sorted_list, test1)
         "Got: %s | Expected: %s\n", temp->data, expected[i]);
     free_list(list);
 }
+
+Test(my_merge, test1)
+{
+    char *av1[] = {"az", "plouf", "zeta", "rambo"};
+    int ac1 =  4;
+    char *av2[] = {"oula", "zebi", "chat", "miaou"};
+    int ac2 =  4;
+    linked_list_t *list1 = my_params_to_list(ac1, av1);
+    linked_list_t *list2 = my_params_to_list(ac2, av2);
+    char *expected[] = {"az","chat","miaou", "oula", "plouf", "rambo", "zebi", "zeta", NULL};
+    linked_list_t *temp;
+    
+    my_sort_list(&list1, &strcmp);
+    my_sort_list(&list2, &strcmp);
+    my_merge(&list1, list2, &strcmp);
+    temp = list1;
+    for (unsigned int i = 0; expected[i] != NULL && temp != NULL;
+        i++, temp = temp->next)
+        cr_assert_str_eq(temp->data, expected[i],
+        "Got: %s | Expected: %s\n", temp->data, expected[i]);
+    free_list(list1);
+    free_list(list2);
+}

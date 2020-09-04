@@ -15,6 +15,7 @@ SRC     =	my_prarams_to_list.c	\
 			my_concat_list.c		\
 			my_sort_list.c			\
 			my_add_in_sorted_list.c	\
+			my_merge.c				\
 
 
 OBJ	    =	$(SRC:.c=.o)

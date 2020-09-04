@@ -2,12 +2,13 @@
 ** EPITECH PROJECT, 2020
 ** Day11
 ** File description:
-** my_add_in_sorted_list
+** my_merge
 */
 
 #include <stdbool.h>
 #include <stdlib.h>
 #include "mylist.h"
+#include "my_string.h"
 
 static void my_sort(linked_list_t **begin, int(*cmp)())
 {
@@ -32,14 +33,17 @@ static void my_sort(linked_list_t **begin, int(*cmp)())
     } while (unsorted);
 }
 
-void my_add_in_sorted_list(linked_list_t **begin, void *data, int(*cmp)())
+void my_merge(linked_list_t **begin1, linked_list_t *begin2, int(*cmp)())
 {
-    linked_list_t *element = malloc(sizeof(linked_list_t));
+    linked_list_t *element;
 
-    if (element == NULL)
-        return;
-    element->data = data;
-    element->next = *begin;
-    *begin = element;
-    my_sort(begin, cmp);
+    for (; begin2 != NULL; begin2 = begin2->next) {
+        element = malloc(sizeof(linked_list_t));
+        if (element == NULL)
+            return;
+        element->data = begin2->data;
+        element->next = *begin1;
+        *begin1 = element;
+    }
+    my_sort(begin1, cmp);
 }
