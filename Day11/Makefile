@@ -9,6 +9,7 @@ SRC     =	my_prarams_to_list.c	\
 			my_list_size.c 			\
 			my_rev_list.c			\
 			my_apply_on_nodes.c 	\
+			my_apply_on_matching_nodes.c 	\
 
 
 OBJ	    =	$(SRC:.c=.o)

@@ -72,3 +72,16 @@ Test(my_apply_on_nodes, test1)
     cr_assert_stdout_eq_str("ploufplafplif");
     free_list(list);
 }
+
+Test(my_apply_on_matching_nodes, test1)
+{
+    char *av[] = {"plif", "plaf", "plouf"};
+    int ac =  3;
+    linked_list_t *list = my_params_to_list(ac, av);
+    int c_caca(void *str){write(1, str, strlen(str));}
+
+    cr_redirect_stdout();
+    my_apply_on_matching_nodes(list, &c_caca, "plouf", &strcmp);
+    cr_assert_stdout_eq_str("plouf");
+    free_list(list);
+}
