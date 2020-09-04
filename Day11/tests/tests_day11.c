@@ -100,3 +100,20 @@ Test(my_find_node, test1)
         "Got: %s | Expected: %s\n", got->data, expected[i]);
     free_list(list);
 }
+
+Test(my_delete_nodes, test1)
+{
+    char *av[] = {"plif", "plaf", "plouf"};
+    int ac =  3;
+    linked_list_t *list = my_params_to_list(ac, av);
+    char *expected[] = {"plouf", "plif", NULL};
+     linked_list_t *temp;
+    
+    my_delete_nodes(&list, "plaf", &strcmp);
+    temp = list;
+    for (unsigned int i = 0; expected[i] != NULL && temp != NULL;
+        i++, temp = temp->next)
+        cr_assert_str_eq(temp->data, expected[i],
+        "Got: %s | Expected: %s\n", temp->data, expected[i]);
+    free_list(list);
+}
