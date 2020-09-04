@@ -13,6 +13,7 @@ SRC     =	my_prarams_to_list.c	\
 			my_find_node.c 			\
 			my_delete_nodes.c		\
 			my_concat_list.c		\
+			my_sort_list.c			\
 
 
 OBJ	    =	$(SRC:.c=.o)

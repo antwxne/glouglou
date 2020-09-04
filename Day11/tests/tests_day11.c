@@ -138,3 +138,20 @@ Test(my_concat_list, test1)
         "Got: %s | Expected: %s\n", temp->data, expected[i]);
     free_list(list1);
 }
+
+Test(my_sort_list, test1)
+{
+    char *av[] = {"az", "plouf", "zeta", "rambo"};
+    int ac =  4;
+    linked_list_t *list = my_params_to_list(ac, av);
+    char *expected[] = {"az", "plouf", "rambo", "zeta", NULL};
+    linked_list_t *temp;
+    
+    my_sort_list(&list, &strcmp);
+    temp = list;
+    for (unsigned int i = 0; expected[i] != NULL && temp != NULL;
+        i++, temp = temp->next)
+        cr_assert_str_eq(temp->data, expected[i],
+        "Got: %s | Expected: %s\n", temp->data, expected[i]);
+    free_list(list);
+}
