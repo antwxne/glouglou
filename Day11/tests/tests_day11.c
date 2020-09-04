@@ -117,3 +117,24 @@ Test(my_delete_nodes, test1)
         "Got: %s | Expected: %s\n", temp->data, expected[i]);
     free_list(list);
 }
+
+Test(my_concat_list, test1)
+{
+    char *av[] = {"plif", "plaf", "plouf"};
+    int ac =  3;
+    char *av2[] = {"caca", "prout", "lol"};
+    int ac2 =  3;
+    linked_list_t *list1 = my_params_to_list(ac, av);
+    linked_list_t *list2 = my_params_to_list(ac2, av2);
+
+    char *expected[] = {"plouf", "plaf", "plif", "lol", "prout", "caca", NULL};
+    linked_list_t *temp;
+    
+    my_concat_list(&list1, list2);
+    temp = list1;
+    for (unsigned int i = 0; expected[i] != NULL && temp != NULL;
+        i++, temp = temp->next)
+        cr_assert_str_eq(temp->data, expected[i],
+        "Got: %s | Expected: %s\n", temp->data, expected[i]);
+    free_list(list1);
+}
