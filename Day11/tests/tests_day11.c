@@ -85,3 +85,18 @@ Test(my_apply_on_matching_nodes, test1)
     cr_assert_stdout_eq_str("plouf");
     free_list(list);
 }
+
+Test(my_find_node, test1)
+{
+    char *av[] = {"plif", "plaf", "plouf"};
+    int ac =  3;
+    linked_list_t *list = my_params_to_list(ac, av);
+    linked_list_t *got = my_find_node(list, "plaf", &strcmp);
+    char *expected[] = {"plaf", "plif", NULL};
+    
+    for (unsigned int i = 0; expected[i] != NULL && got != NULL;
+        i++, got = got->next)
+        cr_assert_str_eq(got->data, expected[i],
+        "Got: %s | Expected: %s\n", got->data, expected[i]);
+    free_list(list);
+}
