@@ -28,7 +28,7 @@ Test(btree_create_node, test_2)
     void *item = (void *)"plouf";
     btree_t *node = btree_create_node(item);
 
-    cr_assert_str_eq(node->data, item, "Got: %s | Expected: %s\n", node->data, item);
+    cr_assert_str_eq(node->item, item, "Got: %s | Expected: %s\n", node->data, item);
     cr_assert_null(node->left);
     cr_assert_null(node->right);
     free(node);

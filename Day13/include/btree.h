@@ -12,7 +12,7 @@ typedef struct btree
 {
     struct btree *left;
     struct btree *right;
-    void *data;
+    void *item;
 } btree_t;
 
 btree_t *btree_create_node(void *item);
