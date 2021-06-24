@@ -1,0 +1,17 @@
+name: Check compilation and tests
+
+on:
+  push:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  Tests:
+    runs-on: ubuntu-latest
+    container: epitechcontent/epitest-docker:devel
+    name: tests
+    steps:
+      - uses: actions/checkout@v2
+      - run: ./all_tests

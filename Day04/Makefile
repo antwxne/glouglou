@@ -15,5 +15,7 @@ SRC		=	my_putchar.c		\
 
 TEST_NAME 	=	unit_tests
 
-test_run:
+tests_run:
 	gcc -o $(TEST_NAME) $(SRC) tests/*.c -lcriterion --coverage
+	./unit_tests
+.PHONY: tests_run

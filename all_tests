@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+make tests_run -C Day03
+make tests_run -C Day04
+make tests_run -C Day05
+make tests_run -C Day06
+make tests_run -C Day07
+make tests_run -C Day08
+make tests_run -C Day09
+make tests_run -C Day10
+make tests_run -C Day11

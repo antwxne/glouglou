@@ -22,6 +22,7 @@ SRC		=	my_strcpy.c			\
 
 TEST_NAME 	=	unit_tests
 
-test_run:
-	mr_clean
+tests_run:
 	gcc -o $(TEST_NAME) $(SRC) tests/*.c -lcriterion --coverage
+	./unit_tests
+.PHONY: tests_run
